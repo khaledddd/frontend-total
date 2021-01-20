@@ -1,0 +1,43 @@
+<h2> List des contacts</h2>
+
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input name="idContact" ngModel  #idContact="ngModel">
+
+    
+    <button>Filtre par Id</button>
+    <button type="reset">Annuler</button>
+  </form>
+    <p>First name : {{ contact.firstName }}</p>
+    <p>Last name : {{ contact.lastName }}</p>
+    <p>Email : {{ contact.email }}</p>
+    <p>Company : {{ contact.company }}</p>
+    <p>Departement : {{ contact.departement }}</p>
+    
+<table class="table table-striped">
+
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Firstname</th>
+        <th>lastname</th>
+        <th>Email</th>
+        <th>company</th>
+        <th>departement</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let contact of contacts">
+        <td>{{contact.id}}</td>
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.company}}</td>
+        <td>{{contact.deparetement}}</td>
+       
+    </tr>
+</tbody>
+
+</table>
+
+
